@@ -143,8 +143,9 @@ void Vector<T>::push_back(const T& elem)
     this->m_array = temp;
     }
 
-    this->m_array[m_size] = elem;
     this->m_size ++;
+    this->m_array[m_size - 1] = elem;
+    
 }
 
 template <typename T>
@@ -169,6 +170,8 @@ int main ()
     std::cout << "vec.capacity() == " << vec.capacity() << std::endl;
 
     std::cout << "calling empty() function for vec  ::: result is " << vec.empty() << std::endl;
+    vec.pop_back();
+    std::cout << "vec.size() after  vec.pop_back() " << vec.size() << std::endl;
 
     std::cout << std::endl;
 
@@ -207,10 +210,10 @@ int main ()
     std::cout << std::endl;
 
     Vector<std::string> vec_str(4);
-    vec_str[0] = "Nothing1";
-    vec_str[1] = "Nothing1";
-    vec_str[2] = "Nothing1";
-    vec_str[3] = "Nothing1";
+    vec_str.push_back("Nothing1");
+    vec_str.push_back("Nothing2");
+    vec_str.push_back("Nothing3");
+    vec_str.push_back("Nothing4");
 
     std::cout << ":::vec_str size & capacity before cleaning:::" << std::endl;
     std::cout << "vec_str.size() == " << vec_str.size() << std::endl;
