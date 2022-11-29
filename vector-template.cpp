@@ -168,6 +168,8 @@ int main ()
     std::cout << "vec.size() == " << vec.size() << std::endl;
     std::cout << "vec.capacity() == " << vec.capacity() << std::endl;
 
+    std::cout << "calling empty() function for vec  ::: result is " << vec.empty() << std::endl;
+
     std::cout << std::endl;
 
     vec.clear();
