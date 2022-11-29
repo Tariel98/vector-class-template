@@ -129,7 +129,7 @@ template <typename T>
 void Vector<T>::push_back(const T& elem)
 {
     if(this->m_size == this->m_capacity){
-        T* temp = new T[2 * m_size];
+        T* temp = new T[2 * (m_size + 1)];
 
     for(int i=0; i < this->m_size; ++i){
         temp[i] = this->m_array[i];
@@ -145,7 +145,6 @@ void Vector<T>::push_back(const T& elem)
 
     this->m_size ++;
     this->m_array[m_size - 1] = elem;
-    
 }
 
 template <typename T>
@@ -209,7 +208,7 @@ int main ()
 
     std::cout << std::endl;
 
-    Vector<std::string> vec_str(4);
+    Vector<std::string> vec_str;
     vec_str.push_back("Nothing1");
     vec_str.push_back("Nothing2");
     vec_str.push_back("Nothing3");
